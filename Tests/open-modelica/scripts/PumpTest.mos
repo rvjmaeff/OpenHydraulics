@@ -1,0 +1,8 @@
+simulate(
+    OpenHydraulics.DevelopmentTests.PumpTest,
+    startTime=0,
+    stopTime=1,
+    numberOfIntervals=500,
+    tolerance=1e-6,
+    method="dassl"
+    );
