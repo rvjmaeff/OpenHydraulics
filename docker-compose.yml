@@ -5,5 +5,3 @@ services:
     build: ./Tests/open-modelica/
     volumes: 
       - ./:/usr/src/OpenHydraulics
-    ports:
-      - 8888:8888

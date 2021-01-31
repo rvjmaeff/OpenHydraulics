@@ -22,6 +22,12 @@ RUN pip3 install --upgrade pip
 # Install OMPython
 RUN pip3 install -U git+git://github.com/OpenModelica/OMPython.git
 
-WORKDIR /usr/src
+# Create a user profile "openmodelicausers" inside the docker container as we should run the docker container as non-root users
+RUN useradd -m -s /bin/bash openmodelicausers
 
-EXPOSE 8888
+# Change the container to non-root "openmodelicauser" and set the env
+USER openmodelicausers
+ENV HOME /home/openmodelicausers
+ENV USER openmodelicausers
+
+WORKDIR /usr/src
